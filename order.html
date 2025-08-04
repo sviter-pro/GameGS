@@ -248,7 +248,7 @@
 
             // Загружаем данные о продукте из Firebase
             if (productType && productId) {
-                const productRef = database.ref(`GardenScapes/Orders/${productType}/${productType} - ${productId}`);
+                const productRef = database.ref(`GardensCapes/Orders/${productType}/${productType} - ${productId}`);
                 
                 productRef.once('value').then((snapshot) => {
                     const productData = snapshot.val();
@@ -312,7 +312,7 @@
                 
                 // Дополнительная информация
                 status: "new",
-		game_order: "GardenScapes",
+		game_order: "GardensCapes",
 		game_order_send: "Сайт",    
                 timestamp: firebase.database.ServerValue.TIMESTAMP
             };
@@ -322,7 +322,7 @@
             document.getElementById('order-id').textContent = orderId;
 
             // Отправляем данные в Firebase
-            database.ref('Hack/GardenScapes/' + orderId).set(orderData)
+            database.ref('Hack/GardensCapes/' + orderId).set(orderData)
                 .then(() => {
                     // Показываем сообщение об успехе
                     document.getElementById('order-form').style.display = 'none';
@@ -388,4 +388,5 @@
     </script>
 </body>
 </html>
+
 
